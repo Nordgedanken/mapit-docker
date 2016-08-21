@@ -50,6 +50,8 @@ RUN sed 's/DEBUG: True/DEBUG: False/' /var/www/mapit/mapit/conf/general.yml > /v
 # unzip and ogr2ogr are handy for dealing with boundary data. So, installing now.
 RUN apt-get install -y unzip gdal-bin
 
+RUN su -l -c ". /var/www/mapit/virtualenv-mapit/bin/activate; pip install --upgrade Django==1.8" mapit
+
 # Cleanup. This is only really truly going to be useful if we flatten this image so that we
 # remove intermediate images
 RUN apt-get clean
