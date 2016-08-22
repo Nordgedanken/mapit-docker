@@ -1,5 +1,5 @@
 FROM ubuntu:trusty
-MAINTAINER Matthew Landauer <matthew@oaf.org.au>
+MAINTAINER Marcel Radzio <info@nordgedanken.de>
 
 #RUN echo \
 #   'deb ftp://ftp.us.debian.org/debian/ jessie main\n \
