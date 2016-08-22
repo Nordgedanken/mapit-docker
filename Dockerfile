@@ -46,6 +46,8 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 #RUN pip install Shapely
 # Turn debug off so we don't run out of memory during imports
 RUN sed 's/DEBUG: True/DEBUG: False/' /var/www/mapit/mapit/conf/general.yml > /var/www/mapit/mapit/conf/general2.yml; mv /var/www/mapit/mapit/conf/general2.yml /var/www/mapit/mapit/conf/general.yml
+RUN sed 's/AREA_SRID: 27700/AREA_SRID: 4326/' /var/www/mapit/mapit/conf/general.yml > /var/www/mapit/mapit/conf/general2.yml; mv /var/www/mapit/mapit/conf/general2.yml /var/www/mapit/mapit/conf/general.yml
+RUN sed 's/  - '127.0.0.1'//' /var/www/mapit/mapit/conf/general.yml > /var/www/mapit/mapit/conf/general2.yml; mv /var/www/mapit/mapit/conf/general2.yml /var/www/mapit/mapit/conf/general.yml
 
 # unzip and ogr2ogr are handy for dealing with boundary data. So, installing now.
 RUN apt-get install -y unzip gdal-bin
