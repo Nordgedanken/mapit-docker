@@ -1,5 +1,5 @@
 ## Dockerized Mapit
-### This is a work in progress and not yet ready to be used
+### This is ONLY working with Nordgedanken/mapit-germany-docker, because it clones an Custom fork. This Repo can be forked and modified
 
 ### How to run this
 
