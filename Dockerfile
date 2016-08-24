@@ -15,7 +15,7 @@ RUN apt-get install -y postgresql-9.3 postgresql-server-dev-9.3
 
 #ADD https://github.com/mysociety/commonlib/raw/master/bin/install-site.sh /install-site.sh
 COPY ./install-site.sh /install-site.sh
-RUN service postgresql restart; chmod +x /install-site.sh && /bin/sh /install-site.sh --default mapit_de mapit mapit.127.0.0.1.nip.io
+RUN service postgresql restart; chmod +x /install-site.sh && /bin/sh /install-site.sh --default mapit mapit mapit.127.0.0.1.nip.io
 RUN rm /install-site.sh
 
 # Install Supervisor to manage multiple processes running in the docker container
